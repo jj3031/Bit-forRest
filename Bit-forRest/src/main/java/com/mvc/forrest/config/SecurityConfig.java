@@ -15,16 +15,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		http.csrf().disable();//csrf 토큰을 사용하지 않겠다.
 		http.authorizeHttpRequests() //인가 요청이 오면
 			.antMatchers("/","/user/**","/storage/**","/rental/**").authenticated()
-			.anyRequest().permitAll()
-			.and()
-			.formLogin()
-			.loginPage("/user/login") //GET
-			.loginProcessingUrl("/user/login") //POST
-			.defaultSuccessUrl("/")
-			.and()
-			.logout()
-			.logoutUrl("/로그아웃요청Url")// 로그인과 로그아웃은 csrf 사용시 사용 안할 때는 로그아웃은 get방식도 가능 POST 요청만 허용
-			.logoutSuccessUrl("로그아웃 성공시 redircet url");
+			.anyRequest().permitAll();
+//			.and()
+//			.formLogin()
+//			.loginPage("/user/login") //GET
+//			.loginProcessingUrl("/user/login") //POST
+//			.defaultSuccessUrl("/");
+//			.and()
+//			.logout()
+//			.logoutUrl("/로그아웃요청Url")// 로그인과 로그아웃은 csrf 사용시 사용 안할 때는 로그아웃은 get방식도 가능 POST 요청만 허용
+//			.logoutSuccessUrl("로그아웃 성공시 redircet url");
 			//1. antMatchers 안에 있는 주소에 접속 할 때는 인증이 필요하다
 			//2. 그 외 모든 리퀘스트는 다 승인한다
 			//3. 그리고

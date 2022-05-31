@@ -1,7 +1,9 @@
 package com.mvc.forrest.common;
 
+import lombok.Data;
 
 //==>리스트화면을 모델링(추상화/캡슐화)한 Bean 
+@Data
 public class Search {
 	
 	///Field
